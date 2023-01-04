@@ -21,6 +21,9 @@ app.use("/api/results/", resultsRoute);
 
 const port = process.env.PORT || 4000;
 
+const path = require("path");
+__dirname = path.resolve();
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/client/build")));
   app.get("*", (req, res) => {
